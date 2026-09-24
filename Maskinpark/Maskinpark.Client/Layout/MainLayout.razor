@@ -1,20 +1,40 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<style>
+    header {
+        height: 60px;
+        padding: 10px 0 0 10px;
+        align-content: center;
+    }
 
+    .body {
+        position: absolute;
+        margin: 0px;
+        padding: 25px;
+        height: calc(100% - 60px);
+        width: 100%;
+        background-color: #D3D7E0;
+    }
+</style>
+
+@* --- MAIN LAYOUT DASHBOARD --- *@
+<div>
+    @* --- Header --- *@
+    <header>
+        <h3>
+            <img src="img/robot.png" alt="Industrial Fleet Manager Logo" width="50" height="40" />
+            Industrial Fleet Manager
+        </h3>
+    </header>
+
+    @* --- Body --- *@
     <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+        <div class="body">
             @Body
-        </article>
+        </div>
     </main>
 </div>
+
 
 <div id="blazor-error-ui" data-nosnippet>
     An unhandled error has occurred.
