@@ -1,12 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
+@* 
 <style>
-    header {
-        height: 60px;
-        padding: 10px 0 0 10px;
-        align-content: center;
-    }
-
     .body {
         position: absolute;
         margin: 0px;
@@ -15,16 +10,14 @@
         width: 100%;
         background-color: #D3D7E0;
     }
-</style>
+</style> 
+*@
 
 @* --- MAIN LAYOUT DASHBOARD --- *@
 <div>
     @* --- Header --- *@
     <header>
-        <h3>
-            <img src="img/robot.png" alt="Industrial Fleet Manager Logo" width="50" height="40" />
-            Industrial Fleet Manager
-        </h3>
+        <NavBar />
     </header>
 
     @* --- Body --- *@
