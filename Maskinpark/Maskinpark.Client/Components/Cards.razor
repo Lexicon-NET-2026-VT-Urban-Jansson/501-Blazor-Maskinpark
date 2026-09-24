@@ -1,0 +1,51 @@
+﻿<style>
+    .card-left-style {
+        width: 35%;
+    }
+    .card-right-style {
+        width: 65%;
+    }
+    .card-style {
+        height: 100%; 
+        box-shadow: 8px 8px 15px 0px #8e8e8e;
+    }
+    .card-title-style {
+        font-weight: bold; 
+        font-size: 18px;
+    }
+    .full-height-row {
+        height: calc(100vh - 175px);
+    }
+</style>
+
+<div class="row row-cols-1 row-cols-sm-2 g-3 full-height-row">
+
+    @* --- Daily Stats --- *@
+    <div class="col card-left-style">
+        <div class="card card-style">
+            <div class="card-body">
+                <h5 class="card-title card-title-style">Daily Stats</h5>
+                <p class="card-text">This is a longer card with supporting 
+                    text below as a natural lead-in to additional content. 
+                    This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+
+    @* --- List of Machines --- *@
+    <div class="col card-right-style">
+        <div class="card card-style">
+            <div class="card-body">
+                <p class="card-title card-title-style">List of Machines</p>
+                <p class="card-text">This is a longer card with supporting 
+                    text below as a natural lead-in to additional content. 
+                    This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@code {
+
+}
