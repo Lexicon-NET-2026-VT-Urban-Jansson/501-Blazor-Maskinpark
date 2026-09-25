@@ -1,4 +1,15 @@
-﻿@inherits LayoutComponentBase
+﻿@*============================================================================*
+ * LAYOUT: MAIN                                                               *
+ *                                                                            *
+ * File: Maskinpark/Maskinpark.Client/Layout/MainLayout.razor                 *
+ *                                                                            *
+ * Main layout for the application.                                           *
+ * @Body is rendering the Dashboard by default (@page "/").                   *
+ *                                                                            *
+ * BLAZOR ERROR UI is displayed when an unhandled error occurs.               *
+ *============================================================================*@
+
+@inherits LayoutComponentBase
 
 @* --- MAIN LAYOUT DASHBOARD --- *@
 <div>
@@ -7,15 +18,13 @@
         <NavBar />
     </header>
 
-    @* --- Body --- *@
+    @* --- Main Body --- *@
     <main>
-        <div class="body">
-            @Body
-        </div>
+        @Body
     </main>
 </div>
 
-
+@* --- BLAZOR ERROR UI --- *@
 <div id="blazor-error-ui" data-nosnippet>
     An unhandled error has occurred.
     <a href="." class="reload">Reload</a>

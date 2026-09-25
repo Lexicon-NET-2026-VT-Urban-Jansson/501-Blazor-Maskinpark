@@ -1,11 +1,21 @@
-﻿@page "/"
+﻿@*============================================================================*
+ * PAGE: DASHBOARD                                                            *
+ *                                                                            *
+ * File: Maskinpark/Maskinpark.Client/Pages/Dashboard.razor                   *
+ *                                                                            *
+ * Main overview page for the dashboard.                                      *
+ * Includes component Cards.                                                  *
+ *============================================================================*@
 
+@page "/"
+
+@* --- Local Styles CSS --- *@
 <style>
     .dashboard {
         margin: 0;
         padding: 0 0 10px 0;
     }
-    .dashboard-sub {
+    .dashboard-subtxt {
         font-size: 16px;
     }
 </style>
@@ -15,6 +25,11 @@
 @* --- Dashboard Page --- *@
 <div class="dashboard">
     <h4>Dashboard</h4>
-    <p class="text-black-50 dashboard-sub">Overview of your industrial IoT devices.</p>
+    <p class="text-black-50 dashboard-subtxt">Overview of your industrial IoT devices.</p>
     <Cards />
 </div>
+
+@* --- C# Code --- *@
+@code {
+
+}
