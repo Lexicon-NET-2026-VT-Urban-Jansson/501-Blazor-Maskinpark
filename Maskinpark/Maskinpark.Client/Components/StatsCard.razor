@@ -1,0 +1,62 @@
+﻿@*============================================================================*
+ * COMPONENT: STATS CARD                                                      *
+ *                                                                            *
+ * File: Maskinpark/Maskinpark.Client/Components/StatsCard.razor              *
+ *                                                                            *
+ * Card for displaying different statistics.                                  *
+ * The component is used in the parent Cards.                                 *
+ *============================================================================*@
+
+@* --- Local Styles CSS --- *@
+<style>
+    .stats-card {
+        margin: 0px;
+        padding: 0px;
+        border-color: #E3E3E8;
+    }
+
+    .stats-card-body {
+        margin: 0px;
+        padding: 5px;
+        font-size: 13px;
+        font-weight: bold;
+        background-color: #F2F3F7;
+    }
+</style>
+
+@* --- Stats Cards x 4 --- *@
+<div class="row row-cols-1 row-cols-sm-2 g-3">
+    <div class="col">
+        <div class="card stats-card">
+            <div class="card-body stats-card-body">
+                <p class="card-text">Total Machines</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card stats-card">
+            <div class="card-body stats-card-body">
+                <p class="card-text">Machines Online</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card stats-card">
+            <div class="card-body stats-card-body">
+                <p class="card-text">Machines Offline</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card stats-card">
+            <div class="card-body stats-card-body">
+                <p class="card-text">Last Updated</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* --- C# Code --- *@
+@code {
+
+}

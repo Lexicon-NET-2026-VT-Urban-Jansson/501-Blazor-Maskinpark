@@ -4,49 +4,63 @@
  * File: Maskinpark/Maskinpark.Client/Components/Cards.razor                  *
  *                                                                            *
  * Cards for displaying information.                                          *
+ * The component is used on the Dashboard page.                               *
  *============================================================================*@
 
 @* --- Local Styles CSS --- *@
 <style>
-    .card-left-style {
-        width: 35%;
-    }
-    .card-right-style {
-        width: 65%;
+    .card-style-full-height-row {
+        height: calc(100vh - 180px);
+        padding: 5px 0 0 0;
     }
     .card-style {
         height: 100%; 
         box-shadow: 8px 8px 15px 0px #8e8e8e;
     }
-    .card-title-style {
+    .card-style-left {
+        width: 35%;
+    }
+    .card-style-right {
+        width: 65%;
+    }
+    .card-style-title {
         font-weight: bold; 
         font-size: 18px;
+        margin-bottom: 15px;
     }
-    .full-height-row {
-        height: calc(100vh - 175px);
+    .card-style-body-2 {
+        height: 100%;
+        border-top: inherit;
+        border-color: #E3E3E8;
+        margin-top: 10px;
     }
 </style>
 
 @* --- Cards x 2 --- *@
-<div class="row row-cols-1 row-cols-sm-2 g-3 full-height-row">
+<div class="row row-cols-1 row-cols-sm-2 g-3 card-style-full-height-row">
 
     @* --- Daily Stats --- *@
-    <div class="col card-left-style">
+    <div class="col card-style-left">
         <div class="card card-style">
+            
+            @* --- Stats 1 --- *@
             <div class="card-body">
-                <h5 class="card-title card-title-style">Daily Stats</h5>
-                <p class="card-text">This is a longer card with supporting 
-                    text below as a natural lead-in to additional content. 
-                    This content is a little bit longer.</p>
+                <h5 class="card-title card-style-title">Daily Stats</h5>
+                <StatsCard />
+            </div>
+           
+            @* --- Stats 2 --- *@
+            <div class="card-body card-style-body-2">
+                <h5 class="card-title card-style-title">Daily Stats</h5>
             </div>
         </div>
     </div>
 
     @* --- List of Machines --- *@
-    <div class="col card-right-style">
+    <div class="col card-style-right">
         <div class="card card-style">
             <div class="card-body">
-                <p class="card-title card-title-style">List of Machines</p>
+                <p class="card-title card-style-title">List of Machines</p>
                 <p class="card-text">This is a longer card with supporting 
                     text below as a natural lead-in to additional content. 
                     This content is a little bit longer.</p>
