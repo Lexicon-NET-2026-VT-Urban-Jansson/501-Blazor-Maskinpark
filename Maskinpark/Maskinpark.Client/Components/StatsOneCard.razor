@@ -1,0 +1,27 @@
+﻿@*============================================================================*
+ * COMPONENT: STATS ONE CARD                                                  *
+ *                                                                            *
+ * File: Maskinpark/Maskinpark.Client/Components/StatsOneCard.razor           *
+ *                                                                            *
+ * Card for displaying a single statistic.                                    *
+ * The component is used in the parent StatsCards.                            *
+ *============================================================================*@
+
+<div class="col">
+    <div class="card stats-card-style">
+        <div class="card-body stats-card-style-body">
+            <img src="@ImageUrl" alt="@AltText" class="card" />
+            <div class="stats-card-style-body-title">
+                @Title
+                <div class="stats-card-style-body-subtitle">@SubTitle</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string ImageUrl { get; set; } = null!;
+    [Parameter] public string AltText { get; set; } = null!;
+    [Parameter] public string Title { get; set; } = null!;
+    [Parameter] public string SubTitle { get; set; } = null!;
+}

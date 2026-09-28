@@ -9,51 +9,48 @@
 
 @* --- Local Styles CSS --- *@
 <style>
-    .stats-card {
+    .stats-card-style {
         margin: 0px;
         padding: 0px;
         border-color: #E3E3E8;
     }
 
-    .stats-card-body {
+    .stats-card-style-body {
+        display: flex;
         margin: 0px;
-        padding: 5px;
-        font-size: 13px;
+        padding: 12px 5px 5px 12px;
+        height: auto;
+        font-size: 15px;
         font-weight: bold;
         background-color: #F2F3F7;
+    }
+
+    .stats-card-style-body-title {
+        padding: 0 0 0 12px;
+    }
+
+    .stats-card-style-body-subtitle {
+        font-size: 18px;
+    }
+
+    .stats-card-style-body img {
+        width: 47px;
+        min-width: 42px;
+        height: 47px;
+        min-height: 34px;
+        margin-top: 0px;
+        padding: 5px;
+        background-color: #E3E3E8; /* F2F3F7 E6E6E8 E3E3E8 DBDBDB */
+        border: none;
     }
 </style>
 
 @* --- Stats Cards x 4 --- *@
 <div class="row row-cols-1 row-cols-sm-2 g-3">
-    <div class="col">
-        <div class="card stats-card">
-            <div class="card-body stats-card-body">
-                <p class="card-text">Total Machines</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card stats-card">
-            <div class="card-body stats-card-body">
-                <p class="card-text">Machines Online</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card stats-card">
-            <div class="card-body stats-card-body">
-                <p class="card-text">Machines Offline</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card stats-card">
-            <div class="card-body stats-card-body">
-                <p class="card-text">Last Updated</p>
-            </div>
-        </div>
-    </div>
+    <StatsOneCard ImageUrl="img/machines.png" AltText="Total Machines" Title="Total Machines" SubTitle="10" />
+    <StatsOneCard ImageUrl="img/online.png" AltText="Machines Online" Title="Machines Online" SubTitle="7" />
+    <StatsOneCard ImageUrl="img/offline.png" AltText="Machines Offline" Title="Machines Offline" SubTitle="3" />
+    <StatsOneCard ImageUrl="img/updated.png" AltText="Last Updated" Title="Last Updated" SubTitle="Mixer 02" />
 </div>
 
 @* --- C# Code --- *@
