@@ -7,13 +7,47 @@
  * The component is used in the parent StatsCards.                            *
  *============================================================================*@
 
+@* --- Local Styles CSS --- *@
+<style>
+    .stats-card {
+        margin: 0px;
+        padding: 0px;
+        border-color: #E3E3E8;
+    }
+    .stats-card-body {
+        display: flex;
+        margin: 0px;
+        padding: 12px 5px 5px 12px;
+        height: auto;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: #F2F3F7;
+    }
+    .stats-card-body-title {
+        padding: 0 0 0 12px;
+    }
+    .stats-card-body-subtitle {
+        font-size: 18px;
+    }
+    .stats-card-body img {
+        width: 47px;
+        min-width: 42px;
+        height: 47px;
+        min-height: 34px;
+        margin-top: 0px;
+        padding: 5px;
+        background-color: #E3E3E8; /* F2F3F7 E6E6E8 E3E3E8 DBDBDB */
+        border: none;
+    }
+</style>
+
 <div class="col">
-    <div class="card stats-card-style">
-        <div class="card-body stats-card-style-body">
+    <div class="card stats-card">
+        <div class="card-body stats-card-body">
             <img src="@ImageUrl" alt="@AltText" class="card" />
-            <div class="stats-card-style-body-title">
+            <div class="stats-card-body-title">
                 @Title
-                <div class="stats-card-style-body-subtitle">@SubTitle</div>
+                <div class="stats-card-body-subtitle">@SubTitle</div>
             </div>
         </div>
     </div>

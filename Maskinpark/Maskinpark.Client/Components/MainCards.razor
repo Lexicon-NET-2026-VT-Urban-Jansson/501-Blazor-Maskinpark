@@ -9,60 +9,58 @@
 
 @* --- Local Styles CSS --- *@
 <style>
-    .main-card-style-full-height-row {
-        height: calc(100vh - 180px);
-        padding: 5px 0 0 0;
-    }
-
-    .main-card-style {
+    .main-card {
         height: 100%; 
         box-shadow: 8px 8px 15px 0px #8e8e8e;
     }
-    .main-card-style-left {
+    .main-card-left {
         width: 38%;
     }
-    .main-card-style-right {
+    .main-card-right {
         width: 62%;
     }
-
-    .main-card-style-title {
+    .main-card-title {
         font-weight: bold; 
         font-size: 18px;
         margin-bottom: 15px;
     }
-    .main-card-style-body-chart {
+    .main-card-body-chart {
         height: 100%;
         border-top: inherit;
         border-color: #E3E3E8;
         margin-top: 10px;
     }
+    .main-card-full-height-row {
+        height: calc(100vh - 180px);
+        padding: 5px 0 0 0;
+    }
 </style>
 
 @* --- Cards x 2 --- *@
-<div class="row row-cols-1 row-cols-sm-2 g-3 main-card-style-full-height-row">
+<div class="row row-cols-1 row-cols-sm-2 g-3 main-card-full-height-row">
 
     @* --- Daily Stats x 2 --- *@
-    <div class="col main-card-style-left">
-        <div class="card main-card-style">
+    <div class="col main-card-left">
+        <div class="card main-card">
             
             @* --- Stats 1 Text/Icons --- *@
             <div class="card-body">
-                <h5 class="card-title main-card-style-title">Daily Stats</h5>
                 <StatsCards />
             </div>
-           
+
             @* --- Stats 2 Chart --- *@
-            <div class="card-body main-card-style-body-chart">
-                <h5 class="card-title main-card-style-title">Daily Stats</h5>
+            <div class="card-body main-card-body-chart">
+                <ChartCard />   
             </div>
+
         </div>
     </div>
 
     @* --- List of Machines --- *@
-    <div class="col main-card-style-right">
-        <div class="card main-card-style">
+    <div class="col main-card-right">
+        <div class="card main-card">
             <div class="card-body">
-                <p class="card-title main-card-style-title">List of Machines</p>
+                <p class="card-title main-card-title">List of Machines</p>
                 <p class="card-text">This is a longer card with supporting 
                     text below as a natural lead-in to additional content. 
                     This content is a little bit longer.</p>

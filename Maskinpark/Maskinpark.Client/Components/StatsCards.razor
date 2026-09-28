@@ -9,43 +9,15 @@
 
 @* --- Local Styles CSS --- *@
 <style>
-    .stats-card-style {
-        margin: 0px;
-        padding: 0px;
-        border-color: #E3E3E8;
-    }
-
-    .stats-card-style-body {
-        display: flex;
-        margin: 0px;
-        padding: 12px 5px 5px 12px;
-        height: auto;
-        font-size: 15px;
+    .stats-card-title {
         font-weight: bold;
-        background-color: #F2F3F7;
-    }
-
-    .stats-card-style-body-title {
-        padding: 0 0 0 12px;
-    }
-
-    .stats-card-style-body-subtitle {
         font-size: 18px;
-    }
-
-    .stats-card-style-body img {
-        width: 47px;
-        min-width: 42px;
-        height: 47px;
-        min-height: 34px;
-        margin-top: 0px;
-        padding: 5px;
-        background-color: #E3E3E8; /* F2F3F7 E6E6E8 E3E3E8 DBDBDB */
-        border: none;
+        margin-bottom: 15px;
     }
 </style>
 
 @* --- Stats Cards x 4 --- *@
+<h5 class="card-title stats-card-title">Daily Stats</h5>
 <div class="row row-cols-1 row-cols-sm-2 g-3">
     <StatsOneCard ImageUrl="img/machines.png" AltText="Total Machines" Title="Total Machines" SubTitle="10" />
     <StatsOneCard ImageUrl="img/online.png" AltText="Machines Online" Title="Machines Online" SubTitle="7" />
