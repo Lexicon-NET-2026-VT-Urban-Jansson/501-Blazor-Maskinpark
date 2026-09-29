@@ -45,7 +45,7 @@
     }
 
     // *** Function to render the chart using Chart.js *** //
-    function renderChartNew(chartId, data, labels) {
+    function renderChart(chartId, data, labels) {
         const ctx = document.getElementById(chartId).getContext('2d');
         new Chart(ctx, {
             type: 'line',
@@ -97,7 +97,7 @@
             await JS.InvokeVoidAsync("startSpinner");
 
             // Show the chart after rendering the component for the first time
-            await JS.InvokeVoidAsync("renderChartNew", "dailyChart",
+            await JS.InvokeVoidAsync("renderChart", "dailyChart",
                 // new[] { 10, 12, 14, 13, 15, 14, 16, 15 },
                 new[] { 6, 12, 4, 11, 8, 6, 14, 16 },
                 new[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" });
