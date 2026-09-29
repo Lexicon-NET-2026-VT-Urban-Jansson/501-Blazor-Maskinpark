@@ -8,11 +8,7 @@
  *============================================================================*@
 
 @* --- Local Styles CSS --- *@
-<style> 
-    .chart-card {
-        position: relative; 
-        height: 200px;
-    }
+<style>
     .chart-card-title {
         font-weight: bold;
         font-size: 18px;
@@ -23,31 +19,29 @@
         height: 100%;
     }
     .chart-spinner-wrapper {
-        align: center;
+        position: absolute;
+        inset: 0; /* top:0; right:0; bottom:0; left:0; */
+        display: flex; 
+        justify-content: center;
         align-items: center;
-        left: 50%;
-        width: 100%;
-        /* 
-        top: 100px;
-        vertical-align: middle;
-        center: center;
-        visibility: hidden;
-        position: absolute; 
-        top: 50%;
-        left: 50%;
-
-        */
+        background: rgba(255,255,255,0.0); /* transparent overlay */
+    }
+    .chart-spinner {
+        width: 75px;
+        height: 75px;
+        font-size: 60px;
     }
 </style>
 
+@* --- JavaScript --- *@
 <script>
     function startSpinner() {
-        document.getElementById("spinner").style.visibility = 'visible';
-        document.getElementById("spinner").style.animationIterationCount = 'Infinite';
+        var wrapper = document.getElementById("spinnerWrapper");
+        if (wrapper) wrapper.style.display = 'flex';
     }
     function stopSpinner() {
-        document.getElementById("spinner").style.visibility = 'hidden';
-        document.getElementById("spinner").style.animationIterationCount = 0;
+        var wrapper = document.getElementById("spinnerWrapper");
+        if (wrapper) wrapper.style.display = 'none';
     }
 
     // *** Function to render the chart using Chart.js *** //
@@ -78,10 +72,11 @@
     }
 </script>
 
+@* --- HTML --- *@
 <h5 class="card-title chart-card-title">Daily Stats</h5>
 
-<div class="chart-spinner-wrapper">
-    <div id="spinner" class="spinner-border text-primary" role="status">
+<div class="chart-spinner-wrapper" id="spinnerWrapper">
+    <div id="spinner" class="spinner-border text-primary chart-spinner" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
 </div>
@@ -90,7 +85,7 @@
     <canvas id="dailyChart"></canvas>
 </div>
 
-
+@* --- C# Code --- *@
 @code {
     [Inject] IJSRuntime JS { get; set; } = null!;
 
@@ -103,26 +98,12 @@
 
             // Show the chart after rendering the component for the first time
             await JS.InvokeVoidAsync("renderChartNew", "dailyChart",
-                new[] { 10, 12, 14, 13, 15, 14, 16, 15 },
+                // new[] { 10, 12, 14, 13, 15, 14, 16, 15 },
+                new[] { 6, 12, 4, 11, 8, 6, 14, 16 },
                 new[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" });
 
             // Stop Spinner
             await JS.InvokeVoidAsync("stopSpinner");
         }
     }
-
-
-    // [Inject] IJSRuntime JS { get; set; } = null!;
-
-    // protected override async Task OnAfterRenderAsync(bool firstRender)
-    // {
-    //     if (firstRender)
-    //     {
-    //         await JS.InvokeVoidAsync("renderChart", "dailyChart",
-    //             new[] { 1, 2, 3 },
-    //             new[] { "Mon", "Tue", "Wed" });
-    //     }
-    // }
-
-
 }
