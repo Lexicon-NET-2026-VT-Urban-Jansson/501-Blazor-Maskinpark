@@ -1,14 +1,47 @@
-﻿<li class="list-group-item d-flex align-items-center justify-content-between py-3">
-    <div class="d-flex align-items-center gap-3">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="machine1">
-            <label class="form-check-label" for="machine1">
-                Machine 1
-            </label>
-        </div>
-    </div>
-</li>
+﻿@*============================================================================*
+ * COMPONENT: MACHINES                                                        *
+ *                                                                            *
+ * File: Maskinpark/Maskinpark.Client/Components/Machines.razor               *
+ *                                                                            *
+ * Card for displaying a list of machines.                                    *
+ * The component is used in the parent MainCards.                             *
+ *============================================================================*@
 
+@* --- Local Styles CSS --- *@
+<style>
+    .machine-button {
+        height: 28px;
+    }
+    .machine-col {
+        padding: 10px 10px 10px 10px;
+        font-size: 15px;
+        font-weight: bold;
+        border-top: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+    }
+</style>
+
+@* --- Title & Button --- *@
+<div class="d-flex">
+    <div class="card-title main-card-title w-50">
+        List of Machines
+    </div>
+    <div class="w-50 d-flex justify-content-end machine-button">
+        <button type="button" class="btn btn-primary btn-sm machine-button">Add Machine</button>
+    </div>
+</div>
+
+@* --- Captions --- *@
+<div class="row row-cols-1 row-cols-sm-2 g-3">
+    <div class="col machine-col" style="width: 38%;">Name</div>
+    <div class="col machine-col" style="width: 10%;">Status</div>
+    <div class="col machine-col" style="width: 12%;">Last Data</div>
+    <div class="col machine-col" style="width: 20%;">Last Updated</div>
+    <div class="col machine-col" style="width: 20%;">Actions</div>
+</div>
+
+
+@* --- C# Code --- *@
 @code {
 
 }
